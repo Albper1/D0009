@@ -31,7 +31,6 @@ class Phonebook:
         self.dic[name] = number
     '''Looks up name in phonebook, prints number if there is one'''
     def lookup(self,name):
-        #print(TB.dic[name] if name in TB.dic else 'name not found')
         if name in self.dic:
             return self.dic[name]
         else:
@@ -63,6 +62,7 @@ class Phonebook:
         try:
             with open(filename,'r') as f:
                 lines = f.readlines()
+            '''Används för att göra skillnad mellan vad som ska vara i dic, och i a_dic'''
             dic_lines = lines[:lines.index('alias_dic\n')]
             a_dic_lines = lines[lines.index('alias_dic\n')+1:]
             for line in dic_lines:
